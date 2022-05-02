@@ -2,5 +2,4 @@
 *.js linguist-detectable=false
 *.html linguist-detectable=false
 *.htm inguist-detectable=false
-//*.c++ inguist-detectable=true
 *.roff inguist-detectable=false
