@@ -1,5 +1,5 @@
-*.roff linguist-detectable=false
 *.c++ linguist-detectable=true
+*.roff linguist-detectable=false
 *.1 linguist-detectable=false
 *.lin linguist-detectable=false
 *.1m linguist-detectable=false
