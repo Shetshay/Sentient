@@ -1,1 +1,2 @@
+*.roff linguist-detectable=false
 *.roff linguist-language=C++
