@@ -11,6 +11,7 @@ using namespace std;
 
 void random_question_gen(int)
 {
+    //we need to make a for loop for these, but I'm not sure how to do that
 bool response_1 = true;
 bool response_2 = true;
 bool response_3 = true;
@@ -27,7 +28,7 @@ bool response_10 = true;
 //     bool response_[i] = true;
 // }
 
-int number = rand() % 10;
+int number = rand() % 10; //we need to make a for loop for these, but I'm not sure how to do that
     if (number == 1)
     {
         if(response_1 == true)
@@ -167,31 +168,29 @@ int number = rand() % 10;
 
 //if the random number has been used mark it as taken and i++, if not, return the number
 
-void slowSpeed()
+void show(string text)
 {
+  for (int i = 0; i < text.length(); i++)
+  {
+    cout << text[i];
     cout.flush();
-    usleep(100000);
-    //return slowSpeed();
+    usleep(100000);  // adjust as necessary, bigger numbers => more delay
+  } 
 }
-
- //void returner()
- //{
-  //   return slowSpeed();
- //}
 
 void random_question_gen2(int)
 {
-
+    //This will hold more questions.
 }
 
 void random_question_gen3(int)
 {
-
+    //This will hold more questions.
 }
-
 
 int main()
 {
+    
 std::system("clear");           //This will clear the screen
 //cout << "\033[2J\033[1;1H";   //This will clear the screen
 int slowsPeed;
@@ -202,49 +201,14 @@ int counter = 0;
 int counter_outsideloop = 0;
 string response;
 
-cout << "\033[31m" << "W";
-slowSpeed();
-cout << "h";
-slowSpeed();
-cout << "a";
-slowSpeed();
-cout << "t";
-slowSpeed();
-cout << " ";
-slowSpeed();
-cout << "i";
-slowSpeed();
-cout << "s";
-slowSpeed();
-cout << " ";
-slowSpeed();
-cout << "y";
-slowSpeed();
-cout << "o";
-slowSpeed();
-cout << "u";
-slowSpeed();
-cout << "r";
-slowSpeed();
-cout << " ";
-slowSpeed();
-cout << "n";
-slowSpeed();
-cout << "a";
-slowSpeed();
-cout << "m";
-slowSpeed();
-cout << "e";
-slowSpeed();
-cout << "?" << "\033[32m" << endl;
+cout << "\033[31m"; //This will change the color to red
+show("What is your name?"); 
+cout << "\033[32m" << endl; //This will change the color to green
 cin >> name;
-cout << "\033[0m";
-cout << "Hello " << name << "!" << endl;
+cout << "\033[31m"; //This will change the color to red
+show("Hello "); show(name); show("."); cout << endl; cout << "\033[0m"; //This will change the color back to normal
 
-
-
-//make new funciton with new variable
-
+//make new function with new variable
 
 while(tries == true)
 {
