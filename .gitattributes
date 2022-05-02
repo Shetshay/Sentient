@@ -1,2 +1,1 @@
-linguist-vendored
-linguist-language=C++
+*.roff linguist-language=C++
