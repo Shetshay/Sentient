@@ -9,161 +9,11 @@
 
 using namespace std;
 
-void random_question_gen(int)
+void random_question_gen()
 {
-    //we need to make a for loop for these, but I'm not sure how to do that
-bool response_1 = true;
-bool response_2 = true;
-bool response_3 = true;
-bool response_4 = true;
-bool response_5 = true;
-bool response_6 = true;
-bool response_7 = true;
-bool response_8 = true;
-bool response_9 = true;
-bool response_10 = true;
-
-// for(int i = 1; i <= 10; i++)
-// {
-//     bool response_[i] = true;
-// }
-
-int number = rand() % 10; //we need to make a for loop for these, but I'm not sure how to do that
-    if (number == 1)
-    {
-        if(response_1 == true)
-        {
-            cout << "Who are you?" << endl;
-
-            response_1 == false;
-        }
-        else
-        {
-            number = rand() % 10;
-        }
-    }
-    else if(number == 2)
-    {
-        if(response_2 == true)
-        {
-            cout << "How are you?" << endl;
-
-            response_2 == false;
-        }
-        else
-        {
-            number = rand() % 10;
-        }
-    }
-    else if(number == 3)
-    {
-        if(response_3 == true)
-        {
-            cout << "What are you doing?" << endl;
-
-            response_3 == false;
-        }
-        else
-        {
-            number = rand() % 10;
-        }
-    }
-    else if(number == 4)
-    {
-        if(response_4 == true)
-        {
-            cout << "What is your name?" << endl;
-
-            response_4 == false;
-        }
-        else
-        {
-            number = rand() % 10;
-        }
-    }
-    else if(number == 5)
-    {
-        if(response_5 == true)
-        {
-            cout << "What is your favorite color?" << endl;
-
-            response_5 == false;
-        }
-        else
-        {
-            number = rand() % 10;
-        }
-    }
-    else if(number == 6)
-    {
-        if(response_6 == true)
-        {
-            cout << "What is your favorite food?" << endl;
-
-            response_6 == false;
-        }
-        else
-        {
-            number = rand() % 10;
-        }
-    }
-    else if(number == 7)
-    {
-        if(response_7 == true)
-        {
-            cout << "What is your favorite animal?" << endl;
-
-            response_7 == false;
-        }
-        else
-        {
-            number = rand() % 10;
-        }
-    }
-    else if(number == 8)
-    {
-        if(response_8 == true)
-        {
-            cout << "What is your favorite sport?" << endl;
-
-            response_8 == false;
-        }
-        else
-        {
-            number = rand() % 10;
-        }
-    }
-    else if(number == 9)
-    {
-        if(response_9 == true)
-        {
-            cout << "What is your favorite movie?" << endl;
-
-            response_9 == false;
-        }
-        else
-        {
-            number = rand() % 10;
-        }
-    }
-    else if(number == 10)
-    {
-        if(response_10 == true)
-        {
-            cout << "What is your favorite song?" << endl;
-
-            response_10 == false;
-        }
-        else
-        {
-            number = rand() % 10;
-        }
-    }
-    else 
-    {
-        cout << "Error" << endl;
-    }
-    //cout << "We just got the number " << number << "!" << endl;
+//we need to make a for loop for these, but I'm not sure how to do that
+    int random_number = rand() % 10+1;
+    cout << "We just got the number " << random_number << "!" << endl;
 }
 
 //if the random number has been used mark it as taken and i++, if not, return the number
@@ -175,7 +25,7 @@ void show(string text)
     cout << text[i];
     cout.flush();
     usleep(100000);  // adjust as necessary, bigger numbers => more delay
-  } 
+  }
 }
 
 void random_question_gen2(int)
@@ -190,7 +40,7 @@ void random_question_gen3(int)
 
 int main()
 {
-    
+
 std::system("clear");           //This will clear the screen
 //cout << "\033[2J\033[1;1H";   //This will clear the screen
 int slowsPeed;
@@ -211,17 +61,16 @@ show("Hello "); show(name); show("."); cout << endl; cout << "\033[0m"; //This w
 //make new function with new variable
 
 while(tries == true)
+
 {
-    while(counter < 3)
-    {
-        random_question_gen(number);
-        counter++;
-    }
-    if(counter_outsideloop == 10)
-    {
-        tries = false;
-    }
-    counter_outsideloop++;
+    srand(time(NULL));
+    number = rand() % 10+1;
+    cout << number << endl;
+    srand(1);
+    tries = false;
 }
+
+
+
     return 0;
 }
