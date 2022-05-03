@@ -1,3 +1,10 @@
 Feel free to post or write the interesting things you learned during this cool project.
 
 //cout << "\033[2J\033[1;1H";   //This will clear the screen
+//std::system("clear");           //This will clear the screen
+
+srand(time(NULL));
+number = rand() % 10+1;
+cout << number << endl;
+srand(1);
+
