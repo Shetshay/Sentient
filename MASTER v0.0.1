@@ -6,8 +6,77 @@
 #include <thread>
 #include <cstdlib>
 #include <ctime>
+#include <boost/progress.hpp>
+#include <boost/timer.hpp>
+#include <vector>
 
 using namespace std;
+
+int bar(int argc,char *argv[])
+{
+    const unsigned long expected_count=20;
+    boost::progress_display show_progress( expected_count );
+    for(int i=0;i!=expected_count;++i)
+    {
+        volatile std::vector<int> v(1024*1024*50);
+        ++show_progress;
+    }
+int counter = 0;
+while (counter < 11) // Created a blinking function
+{
+  cout << "\033[36;4mSuccess\033[0m"; //Blue color/ the 4 also adds the underscore
+  std::system("clear");
+  cout.flush();
+  usleep(100000);
+  cout << "\033[30;5mSuccess\033[0m"; // Black color
+  cout.flush();
+  usleep(100000);
+  std::system("clear");
+  counter++;
+}
+    return 0;
+}
+
+void loading()
+{
+    std::cout << "Loading";
+    while (true)
+    {
+        usleep(1);
+        std::cout << "." << std::flush;
+        usleep(1);
+        std::cout << "." << std::flush;
+        usleep(1);
+        std::cout << "." << std::flush;
+        usleep(1);
+        std::cout << "\b\b\b   \b\b\b" << std::flush;
+        std::cout << '-' << std::flush;
+        for (;;) 
+        {
+            usleep(1);
+            std::cout << "\b\\" << std::flush;
+            usleep(1);
+            std::cout << "\b|" << std::flush;
+            usleep(1);
+            std::cout << "\b/" << std::flush;
+            usleep(1);
+            std::cout << "\b-" << std::flush;
+            false;
+        }
+    }
+}
+
+// std::cout << '-' << std::flush;
+//     for (;;) {
+//         Sleep(10);
+//         std::cout << "\b\\" << std::flush;
+//         Sleep(10);
+//         std::cout << "\b|" << std::flush;
+//         Sleep(10);
+//         std::cout << "\b/" << std::flush;
+//         Sleep(10);
+//         std::cout << "\b-" << std::flush;
+//     }
 
 void random_question_gen()
 {
@@ -40,9 +109,11 @@ void random_question_gen3(int)
 
 int main()
 {
-
 std::system("clear");           //This will clear the screen
 //cout << "\033[2J\033[1;1H";   //This will clear the screen
+//loading();
+bar( 1, NULL );
+
 int slowsPeed;
 bool tries = true;
 string name;
@@ -56,12 +127,11 @@ show("What is your name?");
 cout << "\033[32m" << endl; //This will change the color to green
 cin >> name;
 cout << "\033[31m"; //This will change the color to red
-show("Hello "); show(name); show("."); cout << endl; cout << "\033[0m"; //This will change the color back to normal
+show("Hello "); cout << "\033[32m"; show(name); cout << "\033[31m"; show("."); cout << endl; cout << "\033[0m"; //This will change the color back to normal
 
 //make new function with new variable
 
 while(tries == true)
-
 {
     srand(time(NULL));
     number = rand() % 10+1;
@@ -69,8 +139,5 @@ while(tries == true)
     srand(1);
     tries = false;
 }
-
-
-
     return 0;
 }
